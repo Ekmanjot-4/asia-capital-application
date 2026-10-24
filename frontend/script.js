@@ -3,7 +3,7 @@ let score = 0;
 let questionNumber = 0;
 
 async function getQuestion() {
-    const response = await fetch("http://localhost:3000/question");
+    const response = await fetch("http://54.153.242.181:3000/question");
     const data = await response.json();
 
     currentCountry = data.country;
@@ -19,7 +19,7 @@ async function getQuestion() {
 async function submitAnswer() {
     const answer = document.getElementById("answer").value;
 
-    const response = await fetch("http://localhost:3000/guess", {
+    const response = await fetch("http://54.153.242.181:3000/guess", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
